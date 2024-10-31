@@ -43,7 +43,17 @@ publishing {
         register<MavenPublication>("release") {
             groupId = "com.ionate12"
             artifactId = "oldlibs"
-            version = "1.0.0"
+            version = "1.0.2"
+
+            afterEvaluate {
+                from(components["release"])
+            }
+        }
+    }
+    repositories {
+        maven {
+            name = "myrepo"
+            url = uri(layout.buildDirectory.dir("repo"))
         }
     }
 }
