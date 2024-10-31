@@ -9,7 +9,6 @@ android {
     compileSdk = 34
 
     defaultConfig {
-        applicationId = "com.ionate12.drawingviewsample"
         minSdk = 24
         targetSdk = 34
         versionCode = 1

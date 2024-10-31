@@ -26,3 +26,4 @@ rootProject.name = "DrawingViewSample"
 include(":app")
 include(":DrawingView")
 include(":CFDialog")
+include(":OldLibs")
