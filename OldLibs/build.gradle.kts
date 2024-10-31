@@ -5,7 +5,7 @@ plugins {
 }
 
 android {
-    namespace = "com.ionate12.drawingview"
+    namespace = "com.ionate12.oldlibs"
     compileSdk = 34
 
     defaultConfig {
@@ -29,30 +29,21 @@ android {
         targetCompatibility = JavaVersion.VERSION_17
     }
     kotlinOptions {
-        jvmTarget = "11"
+        jvmTarget = "17"
     }
 }
 
 dependencies {
-
-    implementation(libs.androidx.core.ktx)
-    implementation(libs.androidx.appcompat)
-    implementation(libs.material)
-    testImplementation(libs.junit)
-    androidTestImplementation(libs.androidx.junit)
-    androidTestImplementation(libs.androidx.espresso.core)
+    implementation(project(":DrawingView"))
+    implementation(project(":CFDialog"))
 }
 
 publishing {
     publications {
         register<MavenPublication>("release") {
             groupId = "com.ionate12"
-            artifactId = "drawingview"
+            artifactId = "oldlibs"
             version = "1.0.0"
-
-            afterEvaluate {
-                from(components["release"])
-            }
         }
     }
 }
